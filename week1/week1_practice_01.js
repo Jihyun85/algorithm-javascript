@@ -6,6 +6,27 @@
 // 20이 입력된다면 아래와 같이 반환해야 합니다!
 // [2, 3, 5, 7, 11, 13, 17, 19]
 
+// function findPrimeNum(n) {
+//   let resultAry = [];
+//   for (let i = 2; i <= n; i++) {
+//     let primeNum = true;
+//     for (let j = 2; j < i; j++) {
+//       if (i % j === 0) {
+//         primeNum = false;
+//       }
+//     }
+//     if (primeNum) {
+//       resultAry.push(i);
+//     }
+//   }
+//   return resultAry;
+// }
+
+// const result = findPrimeNum(77);
+// console.log(result);
+
+const input = 20;
+
 function findPrimeNum(n) {
   let resultAry = [];
   for (let i = 2; i <= n; i++) {
@@ -22,5 +43,4 @@ function findPrimeNum(n) {
   return resultAry;
 }
 
-const result = findPrimeNum(20);
-console.log(result);
+console.log(findPrimeNum(input));

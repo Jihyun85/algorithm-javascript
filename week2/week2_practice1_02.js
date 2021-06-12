@@ -1,3 +1,5 @@
+// size가 없는 linked list같은 경우에 사용
+
 class Node {
   constructor(data, next) {
     this.data = data;
