@@ -1,0 +1,23 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "description": "알고리즘을 **자바스크립트**로 학습합니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jihyun85/algorithm-javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jihyun85/algorithm-javascript/issues"
+  },
+  "homepage": "https://github.com/Jihyun85/algorithm-javascript#readme",
+  "dependencies": {
+    "heap-js": "^2.1.5"
+  },
+  "type": "module"
+}
