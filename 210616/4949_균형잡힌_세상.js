@@ -47,7 +47,7 @@ function findBalance(string) {
     if (char === "(" || char === "[") stack.push(char);
     else if (char === ")") {
       pair = stack.pop();
-      if ((pair === null) | (pair !== "(")) return false;
+      if (pair === null || pair !== "(") return false;
     } else if (char === "]") {
       pair = stack.pop();
       if (pair === null || pair !== "[") return false;
