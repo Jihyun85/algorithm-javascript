@@ -18,17 +18,15 @@ function w(a, b, c) {
   if (dp[a][b][c] !== 0) return dp[a][b][c];
 
   if (a < b && b < c) {
-    let value1 = (dp[a][b][c - 1] = w(a, b, c - 1)); // 이런식으로 사용할 수도 있구나...............😂😂😂
-    let value2 = (dp[a][b - 1][c - 1] = w(a, b - 1, c - 1));
-    let value3 = (dp[a][b - 1][c] = w(a, b - 1, c));
-    return (dp[a][b][c] = value1 + value2 - value3);
+    dp[a][b][c] = w(a, b, c - 1) + w(a, b - 1, c - 1) - w(a, b - 1, c);
+    return dp[a][b][c];
   }
-
-  let value1 = (dp[a - 1][b][c] = w(a - 1, b, c));
-  let value2 = (dp[a - 1][b - 1][c] = w(a - 1, b - 1, c));
-  let value3 = (dp[a - 1][b][c - 1] = w(a - 1, b, c - 1));
-  let value4 = (dp[a - 1][b - 1][c - 1] = w(a - 1, b - 1, c - 1));
-  return (dp[a][b][c] = value1 + value2 + value3 - value4);
+  dp[a][b][c] =
+    w(a - 1, b, c) +
+    w(a - 1, b - 1, c) +
+    w(a - 1, b, c - 1) -
+    w(a - 1, b - 1, c - 1);
+  return dp[a][b][c];
 }
 
 for (let line of input) {
