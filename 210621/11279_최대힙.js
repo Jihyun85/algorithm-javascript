@@ -62,29 +62,16 @@ class MaxHeap {
   }
 }
 
-// let [N, ...ary] = [
-//   100, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4,
-//   5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-//   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-//   0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-// ];
+let result = "";
 
 const maxHeap = new MaxHeap();
-// let result = ``;
 
-// for (let num of ary) {
-//   if (num === 0) {
-//     result += maxHeap.storage.length === 1 ? `0\n` : `${maxHeap.delete()}\n`;
-//   } else {
-//     maxHeap.insert(num);
-//   }
-// }
-
-// console.log(result.trim());
-
-for (let i = 1; i <= 10; i++) {
-  maxHeap.insert(i);
+for (let num of ary) {
+  if (num === 0) {
+    result += maxHeap.storage.length === 1 ? `0\n` : `${maxHeap.delete()}\n`;
+  } else {
+    maxHeap.insert(num);
+  }
 }
 
-console.log(maxHeap.delete());
-console.log(maxHeap.delete());
+console.log(result.trim());
