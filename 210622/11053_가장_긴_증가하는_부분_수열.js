@@ -3,29 +3,26 @@
 
 // 예를 들어, 수열 A = {10, 20, 10, 30, 20, 50} 인 경우에 가장 긴 증가하는 부분 수열은 A = {10, 20, 10, 30, 20, 50} 이고, 길이는 4이다.
 
-let [N, input] = ["6", "10 20 10 30 20 50"];
+let [N, input] = ["10", "7 10 8 10 1 2 9 9 1 10"];
 N = Number(N);
 input = input.split(" ").map((num) => Number(num));
 
-let temp = 0;
-let max = 0;
-const ary = [];
+let ary = [0];
 
 for (let num of input) {
-  if (ary.length === 0) {
-    ary.push([num, 1]);
-    max = 1;
+  if (ary[ary.length - 1] < num) {
+    ary.push(num);
     continue;
   }
 
-  for (let i = ary.length - 1; i >= 0; i--) {
-    if (ary[i][0] < num && ary[i][1] > temp) {
-      temp = ary[i][1];
-    }
+  let left = 0;
+  let right = ary.length - 1;
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    if (ary[mid] < num) left = mid + 1;
+    else right = mid - 1;
   }
-  ary.push([num, temp + 1]);
-  max = max < temp + 1 ? temp + 1 : max;
-  temp = 0;
+  ary[right + 1] = num;
 }
 
-console.log(max);
+console.log(ary.length - 1);
